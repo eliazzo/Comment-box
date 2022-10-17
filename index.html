@@ -14,6 +14,12 @@
             var characterCount = document.getElementById("characterCount")
             characterCount.innerHTML = length
             
+        }  
+        
+        function displayComment(){
+            var display = document.getElementById("comment").value
+            document.getElementById("p1").innerHTML = display
+
         }
     </script> 
     </head>
@@ -25,10 +31,15 @@
             <input type="text" id="lname" name="lname" required>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-            <input type="submit" id="submit" value="submit">
+            <input type="button" id="submit" value="submit" onclick="displayComment()">
             <label for="comment">Comment</label>
             <textarea name="comment" onkeyup="myFunction()" id="comment" rows="10" cols="30"></textarea>
             <p>Number of characters:</p><p id="characterCount">0</p><p>out of 140</p>
+
+            <div>
+                <h1>Comments</h1>
+                <p id="p1"></p>  
+            </div>
         </form>
 
     </body>

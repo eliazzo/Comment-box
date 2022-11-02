@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <title>Comment Form</title>
-    <link rel = "stylesheet" href="./comment form.css">
-    <meta charset="UTF-8">
-    <script>
-        function myFunction() {
-            var comment = document.getElementById("comment")
-            var text = comment.value
-            var length = text.length
-
-            var characterCount = document.getElementById("characterCount")
-            characterCount.innerHTML = length
+        <title>Comment Form</title>
+        <link rel = "stylesheet" href="./comment form.css">
+        <meta charset="UTF-8">
+        <script>
             
-        }  
-        
-        function displayComment(){
-            var display = document.getElementById("comment").value
-            document.getElementById("p1").innerHTML = display
-        }        
-    </script> 
+            function myFunction() {
+                const comment = document.getElementById("comment")
+                const text = comment.value
+                var length = text.length
+
+                var characterCount = document.getElementById("characterCount")
+                characterCount.innerHTML = length
+                
+            }  
+            
+            function displayComment(){
+                const newCommentText = document.getElementById("comment").value //contains the string value of the comment
+                const newCommentElement = document.createElement("p") //Makes a new element 
+                newCommentElement.innerHTML = newCommentText //Makes the text content (.innerHTML) of this new element = newCommentText
+                const commentList = document.getElementById("comment-list") //selecting the comment-list div
+                commentList.appendChild(newCommentElement) //append the newCommentElement child to the parent commentList div
+
+                document.getElementById("comment").value = ""
+            }  
+
+            
+
+            /*function characterLimit(){
+                var comment = document.getElementById("comment") //selects comment box
+                var text = comment.value // returns 
+                var length = text.length
+
+                if (length> 140){
+                    document.getElementById("comment-box").style.borderColor = "red"
+                    
+                }
+            }*/
+
+        </script> 
     </head>
     <body>
         <h1>Comment Form</h1>
-        <p>Please fill out this form to see my fabulous coding skills in action</p>
+        <p>Please fill out this form to see my coding skills in action</p>
         <form target="self" onsubmit="return myFunction()">
             <fieldset>
                 <label for="fname">First Name:</label>
@@ -33,19 +53,24 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </fieldset>
-            <div>
-                <h1>Comments</h1> 
+        <div>
                 <p>Write your comments in the comment box below</p>
-            </div>
+        </div>
+
+        <div class="comment-box" id="comment-box">
             <fieldset>
                 <label for="comment">Comment</label>
                 <textarea name="comment" onkeyup="myFunction()" id="comment" rows="10" cols="30" maxlength="140"></textarea>
-                <p>Number of characters:</p><p id="characterCount">0</p><p>out of 140</p>
+                    <p>Number of characters:</p>
+                    <p id="characterCount">0</p>
+                    <p>out of 140</p>
                 <input type="button" id="submit" value="Submit" onclick="displayComment()">
             </fieldset>
-            <div class="yellow">
-                <p id="p1"></p> 
-            </div>
+        </div>
+
+        <div id="comment-list">
+        
+        </div>
         
 
             

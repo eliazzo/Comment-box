@@ -1,4 +1,3 @@
-
 body{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   width: 100%;
@@ -6,7 +5,7 @@ body{
   margin: 0;
   color: #595959;
   font-size: 16px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   text-align: center;
 }
 
@@ -14,16 +13,25 @@ p{
   font-family: 'Times';
 }
 
+fieldset{
+  border: none;
+}
+
 input:focus {
     outline: 2px solid rgb(255, 230, 0);
     box-shadow: 1px 1px 8px 1px rgb(255, 230, 0);
   }
 
-  textarea:focus{
+textarea:focus{
     outline: 2px solid rgb(255, 230, 0);
     box-shadow: 1px 1px 8px 1px rgb(255, 230, 0);
-  }
-  
+}
+
+.full-text-box:focus{
+    outline: 2px solid red;
+    box-shadow: 1px 1px 8px 1px red;
+} 
+/* refers to text box at 140 characters */
 
 h1{
     text-align: center;
@@ -31,10 +39,15 @@ h1{
 
   }
 
-.yellow{
-  color:rgb(255, 230, 0);
-  font-size: 30px;
+
+#character-display{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: auto;
+  background-color: yellow;
+  width: 300px;
+  align-items: center;
 }
+
   
 input, textarea {
   background-color: rgba(11, 98, 60, 0.736);
@@ -43,8 +56,11 @@ input, textarea {
 
 }
 
+/* textarea:invalid {
+  border: 2px dashed red;
+} */
+
 input [type = "submit"]{
   font-family: 'Times';
-
 }
 

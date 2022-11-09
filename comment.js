@@ -1,11 +1,11 @@
 const textareaElement = document.getElementById("comment") // grabbing textarea element
             
             function myFunction() {
-                const text = textareaElement.value
-                const length = text.length
+                const commentText = textareaElement.value
+                const commentLength = commentText.length
 
                 const characterCount = document.getElementById("characterCount")
-                characterCount.innerText = length
+                characterCount.innerText = commentLength
                 
             }  
             

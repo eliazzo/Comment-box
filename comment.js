@@ -1,13 +1,18 @@
 const textareaElement = document.getElementById("comment") // grabbing textarea element
             
-            function myFunction() {
-                const commentText = textareaElement.value
-                const commentLength = commentText.length
+            function character() {
+                const commentText = textareaElement.value // returns the string value of the textarea element (the comment box)
+                const commentLength = commentText.length // returns the length of the string value
 
-                const characterCount = document.getElementById("characterCount")
-                characterCount.innerText = commentLength
+                const characterCount = document.getElementById("characterCount") // sets the characterCount variable to the character-count p element
+                characterCount.innerText = commentLength // sets the innerText of the character-count p element to the length of the string value
                 
             }  
+
+            function textAreaInputHandler(){
+                characterLimitNotice()
+                character()
+            }
             
             function displayComment(){
                 const newCommentText = document.getElementById("comment").value //contains the string value of the comment
@@ -37,8 +42,5 @@ const textareaElement = document.getElementById("comment") // grabbing textarea 
                 }
             }
             
-            function textAreaInputHandler(){
-                characterLimitNotice()
-                myFunction()
-            }
+            
             

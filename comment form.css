@@ -1,23 +1,26 @@
 body{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  color: #595959;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 #comment-form{
-  border: solid 1px rgb(122, 118, 118);
+  text-align: center;
+  color: #595959;
+  font-family: sans-serif;
+  background-color: #f6f2ea;
   display: inline-block;
   box-shadow: 10px 10px 5px #b5b5b5;
-  border-radius: 50px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100vh;
 }
 
 p{
-  font-family: 'Times';
+  font-family: georgia;
 }
 
 fieldset{
@@ -28,6 +31,12 @@ input:focus {
     outline: 2px solid rgb(255, 230, 0);
     box-shadow: 1px 1px 8px 1px rgb(255, 230, 0);
   }
+
+#comment-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 textarea:focus{
     outline: 2px solid rgb(255, 230, 0);
@@ -48,7 +57,7 @@ h1{
 
 
 #character-display{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
   margin: auto;
   background-color: yellow;
   width: 300px;
@@ -57,9 +66,10 @@ h1{
 
   
 input, textarea {
-  background-color: rgba(11, 98, 60, 0.736);
-  border: 1px solid rgba(11, 98, 60, 0.736);
+  background-color: #d891ef;
+  border: none;
   color: rgb(255, 230, 0);
+  border-radius: 5px;
 
 }
 
@@ -67,3 +77,31 @@ input [type = "submit"]{
   font-family: 'Times';
 }
 
+#submit {
+  margin-bottom: 10px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+#comment-list{
+  height: auto;
+  background-color: yellow;
+  margin-bottom: 50px;
+  padding: 10px 20px 10px 20px;
+}
+
+#comment-list p{
+
+  overflow: scroll;
+
+}
+
+@media (max-width: 500px){
+  #comment-form{
+    width: 90%;
+  }
+
+  #comment-list{
+    width: 90%;
+}
+}
